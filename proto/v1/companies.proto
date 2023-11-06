@@ -1,0 +1,28 @@
+syntax = 'proto3';
+
+package directory.v1;
+
+service Companies {
+  rpc GetCompany(GetCompanyReq) returns (Company) {};
+}
+
+message GetCompanyReq {
+  string id = 1;
+}
+
+message Company {
+  string id = 1;
+  string company_name = 2;
+  string address_1 = 3;
+  string address_2 = 4;
+  string city = 5;
+  string state = 6;
+  string postal_code = 7;
+  repeated string departments = 8;
+  repeated Person founder = 9;
+}
+
+message Person {
+  string first_name = 1;
+  string last_name = 2;
+}
